@@ -3,15 +3,12 @@ from agent.instantiate_agent_model import agent_model
 from toolsets.duckduckgo_toolset import duckduck_tools
 
 def build_agent():
-    # get a base agent (your model + provider)
-    agent = agent_model
-		agent.add_tool(duckduck_tools)
-
+    agent = agent_model()  # call your factory
+    agent.add_toolsets([duckduck_tools()])  # attach the toolset
     return agent
 
 if __name__ == "__main__":
     agent = build_agent()
-
     query = "What’s the latest on cybersecurity threats in 2025?"
     result = agent.run_sync(query)
     print(result.output)
