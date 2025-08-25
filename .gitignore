@@ -183,3 +183,4 @@ cython_debug/
 testing_scripts.py
 logs
 archives
+config.py

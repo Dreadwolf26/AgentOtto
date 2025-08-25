@@ -7,7 +7,7 @@ def build_agent():
     agent = agent_model()
 
     # add the DuckDuckGo toolset
-    agent.add_toolsets([duckduck_tools()])
+    agent.add_tool([duckduck_tools()])
 
     return agent
 
