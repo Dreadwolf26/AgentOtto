@@ -4,10 +4,7 @@ from toolsets.duckduckgo_toolset import duckduck_tools
 
 def build_agent():
     # get a base agent (your model + provider)
-    agent = agent_model()
-
-    # add the DuckDuckGo toolset
-    agent.add_tool([duckduck_tools()])
+    agent = Agent(model, toolsets=[duckduck_tools()])
 
     return agent
 
